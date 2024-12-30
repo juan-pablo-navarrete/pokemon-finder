@@ -16,7 +16,7 @@ import lombok.Getter;
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UbigeoResponseDTO implements Serializable {
+public class PokemonResponseDTO implements Serializable {
 
   private String code;
   private PokemonDTO pokemon;
