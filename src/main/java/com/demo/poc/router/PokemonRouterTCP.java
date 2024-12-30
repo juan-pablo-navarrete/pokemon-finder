@@ -4,14 +4,14 @@ import com.google.inject.Inject;
 import java.io.*;
 import java.net.Socket;
 
-public class UbigeoRouterTCP extends Thread {
+public class PokemonRouterTCP extends Thread {
 
-  private final UbigeoHandler ubigeoHandler;
+  private final PokemonHandler pokemonHandler;
   private Socket socket;
 
   @Inject
-  public UbigeoRouterTCP(UbigeoHandler ubigeoHandler) {
-    this.ubigeoHandler = ubigeoHandler;
+  public PokemonRouterTCP(PokemonHandler pokemonHandler) {
+    this.pokemonHandler = pokemonHandler;
   }
 
   public void setSocket(Socket socket) {
@@ -25,9 +25,9 @@ public class UbigeoRouterTCP extends Thread {
     ) {
       String operation = inputReader.readLine();
 
-      if(operation.matches("^ubigeo/\\d{6}$")) {
-        String ubigeoCode = operation.split("/")[1].trim();
-        ubigeoHandler.findUbigeo(ubigeoCode, outputWriter);
+      if(operation.matches("^pokemon/\\d{6}$")) {
+        String pokemonCode = operation.split("/")[1].trim();
+        pokemonHandler.findPokemon(pokemonCode, outputWriter);
       }
 
     } catch (Exception exception) {

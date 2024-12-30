@@ -6,8 +6,8 @@ import com.demo.poc.repository.PokemonRepository;
 import com.demo.poc.repository.AbilityRepository;
 import com.demo.poc.repository.PokemonTypeRepository;
 import com.demo.poc.router.ConnectionServer;
-import com.demo.poc.router.UbigeoHandler;
-import com.demo.poc.router.UbigeoRouterTCP;
+import com.demo.poc.router.PokemonHandler;
+import com.demo.poc.router.PokemonRouterTCP;
 import com.demo.poc.service.PokemonService;
 import com.demo.poc.service.PokemonServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,8 +30,8 @@ public class ComponentInjectorConfig extends AbstractModule {
         bind(AbilityRepository.class);
         bind(PokemonService.class).to(PokemonServiceImpl.class);
         bind(ObjectMapper.class);
-        bind(UbigeoHandler.class);
-        bind(UbigeoRouterTCP.class);
+        bind(PokemonHandler.class);
+        bind(PokemonRouterTCP.class);
         bind(ServerSocket.class).toProvider(ServerSocketProvider.class);
         bind(ConnectionServer.class);
     }

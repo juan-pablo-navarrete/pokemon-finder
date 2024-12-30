@@ -9,13 +9,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ConnectionServer {
 
-  private final UbigeoRouterTCP ubigeoRouterTCP;
+  private final PokemonRouterTCP pokemonRouterTCP;
   private final ServerSocket serverSocket;
 
   @Inject
-  public ConnectionServer(UbigeoRouterTCP ubigeoRouterTCP,
+  public ConnectionServer(PokemonRouterTCP pokemonRouterTCP,
                           ServerSocket serverSocket) {
-    this.ubigeoRouterTCP = ubigeoRouterTCP;
+    this.pokemonRouterTCP = pokemonRouterTCP;
     this.serverSocket = serverSocket;
   }
 
@@ -23,8 +23,8 @@ public class ConnectionServer {
     Socket socket;
     while (true) {
       socket = serverSocket.accept();
-      ubigeoRouterTCP.setSocket(socket);
-      ubigeoRouterTCP.start();
+      pokemonRouterTCP.setSocket(socket);
+      pokemonRouterTCP.start();
       log.info("A new connection was detected");
     }
   }

@@ -16,12 +16,12 @@ public class PokemonServiceImpl implements PokemonService {
   private final AbilityRepository abilityRepository;
 
   @Inject
-  public PokemonServiceImpl(PokemonRepository departmentRepository,
-                            PokemonTypeRepository provinceRepository,
-                            AbilityRepository districtRepository) {
-    this.pokemonRepository = departmentRepository;
-    this.pokemonTypeRepository = provinceRepository;
-    this.abilityRepository = districtRepository;
+  public PokemonServiceImpl(PokemonRepository pokemonRepository,
+                            PokemonTypeRepository pokemonTypeRepository,
+                            AbilityRepository abilityRepository) {
+    this.pokemonRepository = pokemonRepository;
+    this.pokemonTypeRepository = pokemonTypeRepository;
+    this.abilityRepository = abilityRepository;
   }
 
   @Override
