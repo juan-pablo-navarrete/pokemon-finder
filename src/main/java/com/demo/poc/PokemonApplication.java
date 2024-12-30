@@ -8,7 +8,7 @@ import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class UbigeoApplication {
+public class PokemonApplication {
 
   public static void main(String[] args) throws IOException {
     Injector injector = Guice.createInjector(new ComponentInjectorConfig());
